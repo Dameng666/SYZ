@@ -3,183 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>张三 - 个人简历</title>
+    <title>文章作品集 - 你的名字</title>
     <style>
-        /* 基础样式 */
-        :root {
-            --primary: #2d3436;
-            --secondary: #6c5ce7;
-            --light: #f8f9fa;
-        }
-
-        body {
-            background: var(--light);
-            line-height: 1.6;
-            color: var(--primary);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 30px 20px;
-        }
-
-        /* 头部区域 */
-        .resume-header {
-            text-align: center;
-            margin-bottom: 40px;
+        /* 基础样式保持不变... */
+        
+        /* 新增图片样式 */
+        .article-image {
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 15px;
             position: relative;
+            background: #f8f9fa;
+            transition: transform 0.3s ease;
         }
 
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 3px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
 
-        /* 分栏布局 */
-        .resume-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 40px;
+        /* 优化卡片布局 */
+        .portfolio-item {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        /* 左侧边栏 */
-        .sidebar {
-            background: var(--primary);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
 
-        /* 时间轴样式 */
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-            border-left: 2px solid var(--secondary);
-            margin: 20px 0;
+        /* 新增图片悬停效果 */
+        .portfolio-item:hover .article-image {
+            transform: scale(0.98);
         }
 
-        .timeline-item {
-            margin-bottom: 30px;
-            position: relative;
+        /* 优化文字排版 */
+        .portfolio-item h2 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #2d3436;
         }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -36px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            background: var(--secondary);
-            border-radius: 50%;
+        .portfolio-item p {
+            font-size: 0.95rem;
+            color: #636e72;
+            line-height: 1.7;
+            margin-bottom: 15px;
         }
 
-        /* 技能标签 */
-        .skill-tag {
+        /* 新增渐变按钮 */
+        .article-link {
             display: inline-block;
-            background: rgba(108,92,231,0.1);
-            color: var(--secondary);
-            padding: 8px 15px;
-            border-radius: 20px;
-            margin: 5px;
-            font-size: 0.9em;
+            background: linear-gradient(135deg, #6c5ce7, #a363d9);
+            color: white !important;
+            padding: 10px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .resume-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .sidebar {
-                order: -1;
-                margin-bottom: 30px;
-            }
+        .article-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108,92,231,0.3);
         }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="container">
+            <h1 style="font-weight: 600; color: #2d3436;">我的写作作品集</h1>
+            <a href="#contact" style="color: #6c5ce7;">联系我</a>
+        </div>
+    </nav>
+
     <div class="container">
-        <!-- 头部 -->
-        <div class="resume-header">
-            <img src="https://source.unsplash.com/random/400x400?portrait" alt="头像" class="profile-img">
-            <h1>张三</h1>
-            <p>高级内容运营专家</p>
-            <div style="margin-top: 15px;">
-                <a href="mailto:zhangsan@email.com" style="color: var(--secondary); text-decoration: none;">zhangsan@email.com</a> 
-                | 138-1234-5678
+        <div class="portfolio-grid">
+            <!-- 带图片的文章示例 -->
+            <div class="portfolio-item">
+                <div class="article-image">
+                    <img src="https://source.unsplash.com/random/800x600?writing,technology" alt="文章封面">
+                </div>
+                <h2>人工智能的未来发展</h2>
+                <div class="article-date">发布于：2023年8月 | 腾讯科技</div>
+                <p>探讨人工智能技术在各领域的应用前景与发展趋势...</p>
+                <a href="#" class="article-link" target="_blank">阅读全文</a>
+            </div>
+
+            <!-- 第二个示例 -->
+            <div class="portfolio-item">
+                <div class="article-image">
+                    <img src="https://source.unsplash.com/random/800x600?business,digital" alt="文章封面">
+                </div>
+                <h2>数字化转型中的企业挑战</h2>
+                <div class="article-date">发布于：2023年6月 | 36氪</div>
+                <p>分析传统企业在数字化转型过程中面临的主要障碍...</p>
+                <a href="#" class="article-link" target="_blank">阅读全文</a>
             </div>
         </div>
-
-        <!-- 主体内容 -->
-        <div class="resume-grid">
-            <!-- 左侧边栏 -->
-            <aside class="sidebar">
-                <section>
-                    <h2>专业技能</h2>
-                    <div class="skill-tag">内容策划</div>
-                    <div class="skill-tag">SEO优化</div>
-                    <div class="skill-tag">数据分析</div>
-                    <div class="skill-tag">团队管理</div>
-                </section>
-
-                <section style="margin-top: 30px;">
-                    <h2>教育背景</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <h3>北京大学</h3>
-                            <p>新闻与传播学硕士</p>
-                            <p>2015-2018</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h3>复旦大学</h3>
-                            <p>汉语言文学学士</p>
-                            <p>2011-2015</p>
-                        </div>
-                    </div>
-                </section>
-            </aside>
-
-            <!-- 右侧主内容 -->
-            <main>
-                <section>
-                    <h2 style="border-left: 4px solid var(--secondary); padding-left: 15px;">工作经历</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <h3>腾讯科技 · 内容运营总监</h3>
-                            <p>2020.07 - 至今</p>
-                            <ul style="margin-top: 10px; list-style: square; padding-left: 20px;">
-                                <li>带领15人团队完成年度内容生产目标</li>
-                                <li>主导搭建数据驱动的内容运营体系</li>
-                            </ul>
-                        </div>
-                        <div class="timeline-item">
-                            <h3>字节跳动 · 高级内容运营</h3>
-                            <p>2018.06 - 2020.06</p>
-                            <ul style="margin-top: 10px; list-style: square; padding-left: 20px;">
-                                <li>负责垂直领域内容生态建设</li>
-                                <li>策划多个百万级阅读量专题</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section style="margin-top: 40px;">
-                    <h2 style="border-left: 4px solid var(--secondary); padding-left: 15px;">代表作品</h2>
-                    <div style="margin-top: 20px; background: white; padding: 20px; border-radius: 10px;">
-                        <h3>《新媒体运营方法论》</h3>
-                        <p>36氪专栏 | 阅读量150w+</p>
-                        <a href="#" style="color: var(--secondary); text-decoration: none;">查看案例 →</a>
-                    </div>
-                </section>
-            </main>
-        </div>
     </div>
+
+    <footer style="background: #2d3436; color: white;">
+        <div class="container" style="padding: 40px 20px; text-align: center;">
+            <p style="opacity: 0.8;">© 2023 你的名字 | 联系方式：your.email@example.com</p>
+        </div>
+    </footer>
 </body>
 </html>
