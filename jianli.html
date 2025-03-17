@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张三 - 个人简历</title>
+    <style>
+        /* 基础样式 */
+        :root {
+            --primary: #2d3436;
+            --secondary: #6c5ce7;
+            --light: #f8f9fa;
+        }
+
+        body {
+            background: var(--light);
+            line-height: 1.6;
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* 头部区域 */
+        .resume-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* 分栏布局 */
+        .resume-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+        }
+
+        /* 左侧边栏 */
+        .sidebar {
+            background: var(--primary);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* 时间轴样式 */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid var(--secondary);
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary);
+            border-radius: 50%;
+        }
+
+        /* 技能标签 */
+        .skill-tag {
+            display: inline-block;
+            background: rgba(108,92,231,0.1);
+            color: var(--secondary);
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .resume-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                order: -1;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="resume-header">
+            <img src="https://source.unsplash.com/random/400x400?portrait" alt="头像" class="profile-img">
+            <h1>张三</h1>
+            <p>高级内容运营专家</p>
+            <div style="margin-top: 15px;">
+                <a href="mailto:zhangsan@email.com" style="color: var(--secondary); text-decoration: none;">zhangsan@email.com</a> 
+                | 138-1234-5678
+            </div>
+        </div>
+
+        <!-- 主体内容 -->
+        <div class="resume-grid">
+            <!-- 左侧边栏 -->
+            <aside class="sidebar">
+                <section>
+                    <h2>专业技能</h2>
+                    <div class="skill-tag">内容策划</div>
+                    <div class="skill-tag">SEO优化</div>
+                    <div class="skill-tag">数据分析</div>
+                    <div class="skill-tag">团队管理</div>
+                </section>
+
+                <section style="margin-top: 30px;">
+                    <h2>教育背景</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h3>北京大学</h3>
+                            <p>新闻与传播学硕士</p>
+                            <p>2015-2018</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>复旦大学</h3>
+                            <p>汉语言文学学士</p>
+                            <p>2011-2015</p>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- 右侧主内容 -->
+            <main>
+                <section>
+                    <h2 style="border-left: 4px solid var(--secondary); padding-left: 15px;">工作经历</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h3>腾讯科技 · 内容运营总监</h3>
+                            <p>2020.07 - 至今</p>
+                            <ul style="margin-top: 10px; list-style: square; padding-left: 20px;">
+                                <li>带领15人团队完成年度内容生产目标</li>
+                                <li>主导搭建数据驱动的内容运营体系</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>字节跳动 · 高级内容运营</h3>
+                            <p>2018.06 - 2020.06</p>
+                            <ul style="margin-top: 10px; list-style: square; padding-left: 20px;">
+                                <li>负责垂直领域内容生态建设</li>
+                                <li>策划多个百万级阅读量专题</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section style="margin-top: 40px;">
+                    <h2 style="border-left: 4px solid var(--secondary); padding-left: 15px;">代表作品</h2>
+                    <div style="margin-top: 20px; background: white; padding: 20px; border-radius: 10px;">
+                        <h3>《新媒体运营方法论》</h3>
+                        <p>36氪专栏 | 阅读量150w+</p>
+                        <a href="#" style="color: var(--secondary); text-decoration: none;">查看案例 →</a>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
